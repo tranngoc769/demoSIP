@@ -1,0 +1,127 @@
+<html>
+
+<head>
+    <title>VoIP</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawe.css">
+    <style>
+        .row {
+            margin-bottom: 10px;
+        }
+
+        .mt-3,
+        .my-3 {
+            margin-top: 0rem !important;
+            margin-bottom: 0rem !important;
+        }
+    </style>
+
+    <script src="js/jquery.min.js"></script>
+    
+    <script src="js/toast.min.js"></script>
+    <script src="js/document.js"></script>
+    <script type="text/javascript">
+
+
+    </script>
+</head>
+
+<body>
+    <audio id="remoteAudio"></audio>
+    <audio id="loaclAudio" muted="muted"></audio>
+    <div id='main' class="row" style="margin: 10px 150px;">
+        <div class="col-xl-12 col-md-12 mb-12">
+            <!--   uri: "202@tel4vn-vn01.tel4vn.com",
+            wsServers: "wss://sbc03.tel4vn.com:7444",
+            password: 'TEL4VN.COM@2020',
+            authorizationUser: '202',
+            proxy : "sbc03.tel4vn.com" -->
+            <div class="card border-3 shadow" style="border-radius:1rem">
+                <h2 style="margin: 10px;text-align: center;">Cấu hình</h2>
+                <div style="padding: 10px 50px;">
+                    <!-- Config -->
+                    <!-- 
+                        var iUri = $(`input[id="uriAddr"]`).val();
+                        var iWsServers = $(`input[id="wsServers"]`).val();
+                        var iPort = $(`input[id="port"]`).val();
+                        var iUSer = $(`input[id="authorUser"]`).val();
+                        var iPassword = $(`input[id="password"]`).val();
+                        var iProxy = $(`input[id="proxy"]`).val();
+                     -->
+                    <div class="row">
+                        <div class="col-md-12" style="display: flex;">
+                            <input id='uriAddr' type="text" placeholder="URI" class="form-control"
+                                value="202@tel4vn-vn01.tel4vn.com">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9" style="display: flex;">
+                            <input id='wsServers' type="text" placeholder="wss://" class="form-control"
+                                value="wss://sbc03.tel4vn.com">
+                        </div>
+                        <div class="col-md-3">
+                            <input id='port' type="text" placeholder="Port" class="form-control" value="7444">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3" style="display: flex;">
+                            <input id='authorUser' type="text" placeholder="Authorization User" class="form-control"
+                                value="202">
+                        </div>
+                        <div class="col-md-4">
+                            <input id='password' placeholder="Password" type="password" class="form-control"
+                                value="TEL4VN.COM@2020">
+                        </div>
+                        <div class="col-md-5">
+                            <input id='proxy' type="text" placeholder="Proxy" class="form-control"
+                                value="sbc03.tel4vn.com">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button id="register" onclick="init()" class="btn btn-success" style="
+                width: 100%;"><i class="fas fa-magic mr-1"></i>Register</button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Call -->
+    <div class="row" style="margin: 10px 150px;">
+        <div class="col-xl-12 col-md-12 mb-12">
+            <div class="card border-3 shadow" style="border-radius:1rem">
+
+                <h2 style="margin: 10px;text-align: center;">Make a call</h2>
+                <div style="padding: 10px 50px;">
+                    <div class="row">
+                        <div class="col-md-9" style="display: flex;">
+                            <input id='callAddress' type="text" placeholder="Address to call" class="form-control"
+                                value="203@tel4vn-vn01.tel4vn.com">
+                        </div>
+                        <div class="col-md-3">
+                            <button id='callBtn'
+                                class="btn btn-outline-info btn-rounded btn-block z-depth-0">Call</button>
+                        </div>
+                    </div>
+                    <!--  -->
+
+                    <!-- Camera Screen -->
+                    <div id='cameraScreen' class="row">
+
+                    </div>
+                    <div id='income' class="row">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/sip-0.15.10.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
