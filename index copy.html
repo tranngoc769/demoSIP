@@ -1,0 +1,145 @@
+<html>
+
+<head>
+    <title>VoIP</title>
+
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawe.css">
+    <style>
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/toast.min.js"></script>
+    <script src="js/document.js"></script>
+    <script type="text/javascript">
+    </script>
+</head>
+
+<body>
+    <div id='main' class="row" style="margin: 10px 50px;">
+        <div class="col-xl-6 col-md-6 mb-6">
+            <div class="row">
+                <div class="card border-3 shadow" style="border-radius:1rem">
+                    <h2 style="margin: 10px;text-align: center;">Cấu hình</h2>
+                    <div style="padding: 10px 50px;">
+                        <div class="row">
+                            <div class="col-md-12" style="display: flex;">
+                                <input id='uriAddr' type="text" placeholder="URI" class="form-control"
+                                    value="202@tel4vn-vn01.tel4vn.com">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9" style="display: flex;">
+                                <input id='wsServers' type="text" placeholder="wss://" class="form-control"
+                                    value="wss://sbc03.tel4vn.com">
+                            </div>
+                            <div class="col-md-3">
+                                <input id='port' type="text" placeholder="Port" class="form-control" value="7444">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3" style="display: flex;">
+                                <input id='authorUser' type="text" placeholder="Authorization User" class="form-control"
+                                    value="202">
+                            </div>
+                            <div class="col-md-4">
+                                <input id='password' placeholder="Password" type="password" class="form-control"
+                                    value="TEL4VN.COM@2020">
+                            </div>
+                            <div class="col-md-5">
+                                <input id='proxy' type="text" placeholder="Proxy" class="form-control"
+                                    value="sbc03.tel4vn.com">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button id="register" onclick="init()" class="btn btn-success" style="
+                width: 100%;"><i class="fas fa-magic mr-1"></i>Register</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contact -->
+            <div class="row">
+
+                <div class="card border-3 shadow" style="margin-right: 75px;
+    border-radius: 1rem;
+    width: -webkit-fill-available;">
+                    <div style="padding: 10px 50px;">
+                        <table class="table">
+                            <thead class="black white-text">
+                                <tr>
+                                    <th width="20%" scope="col">Name</th>
+                                    <th width="40%" scope="col">Phone</th>
+                                    <th width="40%" scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td width="20$" style="vertical-align: middle;">203</td>
+                                    <td width="40%" style="vertical-align: middle;">203@tel4vn-vn01.tel4vn.com</td>
+                                    <td width="40%">
+                                        <button name="203" style="padding: 3px 15px;" type="button"
+                                            class="btn btn-outline-success" onclick="call('203')">Call</button>
+                                        <button name="203" style="padding: 3px 15px;" type="button"
+                                            class="btn btn-outline-success">Edit</button>
+                                        <button name="203" style="padding: 3px 15px;" type="button"
+                                            class="btn btn-outline-success">Delete</button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Call -->
+        <div class="col-xl-6 col-md-6 mb-6">
+            <div class="card border-3 shadow" style="border-radius:1rem">
+
+                <h2 style="margin: 10px;text-align: center;">Make a call</h2>
+                <div style="padding: 10px 50px;">
+                    <div class="row">
+                        <div class="col-md-4" style="display: flex;">
+                            <input id='name' type="text" placeholder="Name" class="form-control" value="203">
+                        </div>
+                        <div class="col-md-6" style="display: flex;">
+                            <input id='callAddress' type="text" placeholder="Address to call" class="form-control"
+                                value="203@tel4vn-vn01.tel4vn.com">
+                        </div>
+                        <div class="col-md-1">
+                            <button id='callBtn'
+                                class="btn btn-outline-info btn-rounded btn-block z-depth-0">Call</button>
+                        </div>
+                        <div class="col-md-1">
+                            <button id='addBtn'
+                                class="btn btn-outline-info btn-rounded btn-block z-depth-0">Add</button>
+                        </div>
+                    </div>
+                    <!--  -->
+
+                    <!-- Camera Screen -->
+                    <div id='cameraScreen' class="row">
+
+                    </div>
+                    <div id='income' class="row">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="domain">
+        <p>
+            <bold>Contact domain : @tel4vn-vn01.tel4vn.com</bold>
+        </p>
+    </div>
+
+    <script src="js/sip-0.15.10.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
